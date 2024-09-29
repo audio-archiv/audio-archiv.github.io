@@ -1,7 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Audio Player</title>
+    <!-- Wavesurfer.js CDN -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <!-- Container for the waveform -->
+    <div id="waveform"></div>
+
+    <script>
+        // Create a WaveSurfer instance
+        const wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: 'rgb(200, 0, 200)',
+            progressColor: 'rgb(100, 0, 100)'
+        });
+
+        // Load the audio file
+        wavesurfer.load('https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0'); // Replace this with the actual direct URL to your audio
+
+        // Play audio on click
+        wavesurfer.on('click', () => {
+            wavesurfer.playPause();
+        });
+    </script>
+
 </body>
 </html>
