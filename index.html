@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corylus_-_Live_@_Topf_Birthday_Party_-_Sportstueberl_Kainisch_-_16._08._2024</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        .audio-player {
-            margin: 20px 0;
-        }
-        /* Set the width of the audio player */
-        audio {
-            width: 100%; /* or set a specific width like 600px */
-            max-width: 800px; /* Adjust the maximum width */
-        }
-    </style>
+    <title>CORYLUS</title>
 </head>
 <body>
 
-    <h1>Corylus_-_Live_@_Topf_Birthday_Party_-_Sportstueberl_Kainisch_-_16._08._2024</h1>
-
-    <!-- HTML5 Audio Player with Extended Width -->
-    <div class="audio-player">
-        <audio controls>
-            <source src="https://links.nutbiz.net/t9YVI1" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+    <div id="waveform">
+        <!-- the waveform will be rendered here -->
+      </div>
+      
+      <script type="module">
+      import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
+      
+      const wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: '#4F4A85',
+        progressColor: '#383351',
+        url: 'https://links.nutbiz.net/t9YVI1',
+      })
+      
+      wavesurfer.on('interaction', () => {
+        wavesurfer.play()
+      })
+      </script>
 
 </body>
 </html>
