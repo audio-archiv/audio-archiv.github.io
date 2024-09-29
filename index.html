@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimal Audio Player</title>
-    <!-- Wavesurfer.js CDN -->
+    <!-- Include Wavesurfer.js CDN -->
     <script src="https://unpkg.com/wavesurfer.js"></script>
+    <style>
+        #waveform {
+            width: 100%;
+            height: 128px;
+            background-color: #f3f3f3;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,19 +20,22 @@
     <div id="waveform"></div>
 
     <script>
-        // Create a WaveSurfer instance
-        const wavesurfer = WaveSurfer.create({
-            container: '#waveform',
-            waveColor: 'rgb(200, 0, 200)',
-            progressColor: 'rgb(100, 0, 100)'
-        });
+        // Make sure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create a WaveSurfer instance
+            const wavesurfer = WaveSurfer.create({
+                container: '#waveform',
+                waveColor: 'rgb(200, 0, 200)',
+                progressColor: 'rgb(100, 0, 100)'
+            });
 
-        // Load the audio file
-        wavesurfer.load('https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0/Corylus_-_Live_@_Topf_Birthday_Party_-_Sportstueberl_Kainisch_-_16._08._2024.mp3'); // Replace this with the actual direct URL to your audio
+            // Load the audio file (ensure this is a direct link to an mp3 file)
+            wavesurfer.load('https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0/Corylus_-_Live_@_Topf_Birthday_Party_-_Sportstueberl_Kainisch_-_16._08._2024.mp3'); // Replace with your actual URL
 
-        // Play audio on click
-        wavesurfer.on('click', () => {
-            wavesurfer.playPause();
+            // Play audio on click
+            wavesurfer.on('click', function() {
+                wavesurfer.playPause();
+            });
         });
     </script>
 
