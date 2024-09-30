@@ -1,30 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORYLUS</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>h5audio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
+
 <body>
-
-    <div id="waveform">
-        <!-- the waveform will be rendered here -->
-      </div>
-      
-      <script type="module">
-      import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
-      
-      const wavesurfer = WaveSurfer.create({
-        container: '#waveform',
-        waveColor: '#4F4A85',
-        progressColor: '#383351',
-        url: 'https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0',
-      })
-      
-      wavesurfer.on('interaction', () => {
-        wavesurfer.play()
-      })
-      </script>
-
+    <div style="text-align:center;">Hey, here's the demo of jekyll-miniaudio plugin.</div>
+    <div id="ma-container" class="ma-container">
+        <audio class="ma-audio" src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0">
+            <p>Your brower is too old, it does not support html5 audio play.</p>
+        </audio>
+        <div class="ma-player">
+            <div class="button-play">
+                <img src="assets/play.svg" alt="play-button">
+            </div>
+            <div class="progress-bar">
+                <div class="bar">
+                    <div class="brick">
+                    </div>
+                </div>
+            </div>
+            <div class="progress-panel">
+                <span class="current-time">00:00</span>
+                <span class="duration-time" style="display: none">00:00</span>
+            </div>
+            <div class="button-stop">
+                <img src="assets/stop.svg" alt="play-button">
+            </div>
+            <div class="button-loop">
+                <img src="assets/loop.svg" alt="play-button">
+            </div>
+            <div class="info-panel">
+                <div><span class="title">Corylus_-_Live_@_Topf_Birthday_Party_-_Sportstueberl_Kainisch_-_16._08._2024.mp3</span></div>
+            </div>
+            <div class="volume-up">
+                <img src="assets/volume-up.svg" alt="play-button">
+            </div>
+            <div class="volume-down">
+                <img src="assets/volume-down.svg" alt="play-button">
+            </div>
+        </div>
+    </div>
+    <script src="miniAudio.js"></script>
+    <script>
+        var h5Audio = new MiniAudio('ma-container', 'https://hailengc.github.io/jekyll-miniaudio');
+    </script>
 </body>
+
+
 </html>
