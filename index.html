@@ -1,67 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORYLUS - LIVESETS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .audio-container {
-            width: 100%; /* Full width */
-            max-width: 800px; /* Max width for larger screens */
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        audio {
-            width: 100%; /* Responsive width */
-            outline: none; /* Remove default outline */
-        }
-    </style>
+    <title>Advanced Audio Player</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
-    <h1>CORYLUS - LIVESETS</h1>
-
-    <div class="audio-container">
-        <h2>Track 1 - Live Set A</h2>
-        <audio controls>
+    <div class="audio-player">
+        <audio id="audio" controls>
             <source src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+        <div class="controls">
+            <button id="play-pause-button">Play</button>
+            <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div id="current-time">0:00</div>
+        <div id="total-time">0:00</div>
     </div>
-
-    <div class="audio-container">
-        <h2>Track 2 - Live Set B</h2>
-        <audio controls>
-            <source src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-
-    <div class="audio-container">
-        <h2>Track 3 - Live Set C</h2>
-        <audio controls>
-            <source src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
