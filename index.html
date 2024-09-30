@@ -1,56 +1,62 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>h5audio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .player {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <div style="text-align:center;">Hey, here's the demo of jekyll-miniaudio plugin.</div>
-    <div id="ma-container" class="ma-container">
-        <audio class="ma-audio" src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0">
-            <p>Your brower is too old, it does not support html5 audio play.</p>
+
+    <h1>CORYLUS - LIVESETS</h1>
+
+    <div class="player">
+        <h2>Track 1 - Live Set A</h2>
+        <audio controls autoplay preload="metadata" loop>
+            <source src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0" type="audio/mpeg">
+            Your browser does not support the audio element.
         </audio>
-        <div class="ma-player">
-            <div class="button-play">
-                <img src="assets/play.svg" alt="play-button">
-            </div>
-            <div class="progress-bar">
-                <div class="bar">
-                    <div class="brick">
-                    </div>
-                </div>
-            </div>
-            <div class="progress-panel">
-                <span class="current-time">00:00</span>
-                <span class="duration-time" style="display: none">00:00</span>
-            </div>
-            <div class="button-stop">
-                <img src="assets/stop.svg" alt="play-button">
-            </div>
-            <div class="button-loop">
-                <img src="assets/loop.svg" alt="play-button">
-            </div>
-            <div class="info-panel">
-                <div><span class="title">Corylus_-_Live_@_Topf_Birthday_Party_-_Sportstueberl_Kainisch_-_16._08._2024.mp3</span></div>
-            </div>
-            <div class="volume-up">
-                <img src="assets/volume-up.svg" alt="play-button">
-            </div>
-            <div class="volume-down">
-                <img src="assets/volume-down.svg" alt="play-button">
-            </div>
-        </div>
+        <p>Playback options: Autoplay, Loop</p>
     </div>
-    <script src="miniAudio.js"></script>
-    <script>
-        var h5Audio = new MiniAudio('ma-container', 'https://hailengc.github.io/jekyll-miniaudio');
-    </script>
+
+    <div class="player">
+        <h2>Track 2 - Live Set B</h2>
+        <audio controls preload="auto">
+            <source src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p>Playback options: Preload auto (browser decides how much to preload)</p>
+    </div>
+
+    <div class="player">
+        <h2>Track 3 - Live Set C</h2>
+        <audio controls>
+            <source src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p>Playback options: No preload specified</p>
+    </div>
+
+    <div class="player">
+        <h2>Track 4 - Live Set D</h2>
+        <audio controls>
+            <source src="https://onedrive.live.com/download?cid=344697ce75c8a32d&resid=344697CE75C8A32D!15961&parId=344697CE75C8A32D!15959&authkey=!ACNzjaQnxmr3BE0" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p>Includes multiple audio formats for compatibility</p>
+    </div>
+
 </body>
-
-
 </html>
