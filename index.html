@@ -13,20 +13,31 @@
             height: 100vh;
             margin: 0;
         }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1280px; /* Limit the maximum width for larger screens */
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
         iframe {
-            width: 1280px; /* 720p width */
-            height: 720px; /* 720p height */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <iframe 
-        src="https://www.youtube-nocookie.com/embed/SEP6wCOlTew?si=nnqmBykMtJb6Sh1U" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube-nocookie.com/embed/SEP6wCOlTew?si=nnqmBykMtJb6Sh1U" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
 </body>
 </html>
