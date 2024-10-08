@@ -1,15 +1,31 @@
+
+Here’s the updated index.html file with a black background, centered player, and larger size for a 720p resolution:
+
+html
+Copy code
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Live Stream</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        iframe {
+            width: 1280px; /* 720p width */
+            height: 720px; /* 720p height */
+        }
+    </style>
 </head>
 <body>
-    <h1>Live Stream</h1>
     <iframe 
-        width="560" 
-        height="315" 
         src="https://www.youtube-nocookie.com/embed/SEP6wCOlTew?si=nnqmBykMtJb6Sh1U" 
         title="YouTube video player" 
         frameborder="0" 
